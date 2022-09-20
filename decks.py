@@ -1,4 +1,4 @@
-from typing import Tuple, List, Type, Union
+from typing import Tuple, List
 from random import randint
 from card import Card
 from abc import ABC, abstractmethod
@@ -9,7 +9,7 @@ class DefaultDeck(ABC):
     def __init__(self) -> None:
         self.deck = []
         return None
-        
+
 
     def add_card(self, card: Card) -> None:
         if not isinstance(card, Card):
