@@ -11,6 +11,17 @@ class DefaultDeck(ABC):
         return None
 
 
+    def get_cards(self, number_of_cards: int) -> List[Card]:
+        if len(self.deck) < number_of_cards:
+            raise IndexError("not enough cards in deck")
+        cards = []
+        while number_of_cards != 0:
+            card = self.deck.pop()
+            cards.append(card)
+            number_of_cards -= 1
+        return cards
+
+
     def add_card(self, card: Card) -> None:
         if not isinstance(card, Card):
             raise TypeError("card not of correct type")
