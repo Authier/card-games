@@ -8,7 +8,8 @@ class DefaultDeck(ABC):
     @abstractmethod
     def __init__(self) -> None:
         self.deck = []
-    
+        return None
+        
 
     def add_card(self, card: Card) -> None:
         if not isinstance(card, Card):
