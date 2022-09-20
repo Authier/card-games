@@ -1,3 +1,4 @@
+from __future__ import annotations
 from typing import Tuple, List
 from random import randint
 from card import Card
@@ -26,6 +27,14 @@ class DefaultDeck(ABC):
         if not isinstance(card, Card):
             raise TypeError("card not of correct type")
         self.deck.append(card)
+        return None
+
+
+    def add_deck(self, new_deck: DefaultDeck) -> None:
+        if not isinstance(new_deck, DefaultDeck):
+            raise TypeError("deck not of correct type")
+        for card in new_deck.deck:
+            self.add_card(card)
         return None
 
 
