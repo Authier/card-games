@@ -9,8 +9,10 @@ from abc import ABC, abstractmethod
 class DefaultCardGame(ABC):
     @abstractmethod
     def __init__(self, players: List[Player]=[]) -> None:
-        self.players = players
+        self.players = ["DEALER", ]
 
+    def remove_player(self, player: Player) -> bool:
+        pass
 
     def __refresh_deck(self) -> None:
         pass
