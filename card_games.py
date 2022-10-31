@@ -9,6 +9,9 @@ from abc import ABC, abstractmethod
 class DefaultCardGame(ABC):
     @abstractmethod
     def __init__(self, players: List[Player]=[]) -> None:
+        """
+        This will show all the players that are at the table and initialize that.
+        """
         self.players = ["DEALER", ]
 
     def remove_player(self, player: Player) -> bool:
